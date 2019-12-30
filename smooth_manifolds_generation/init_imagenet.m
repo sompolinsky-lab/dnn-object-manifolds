@@ -1,0 +1,26 @@
+% init script
+global IMAGENET_OBJECT_SIZE;
+global IMAGENET_FRAME;
+global IMAGENET_FRAME_SIZE;
+global IMAGENET_IMAGE_SIZE;
+global IMAGENET_FRAME_LIMITS;
+global N_HMAX_FEATURES;
+global USE_NEW_IMAGENET_WARP; 
+USE_NEW_IMAGENET_WARP=1;
+
+% Only those settings should be changed:
+% IMAGENET_OBJECT_SIZE - the size of the square object
+% IMAGENET_FRAME - the size of the frame
+% That is, image width and height is [frame + object + frame]
+%IMAGENET_FRAME = 4; IMAGENET_OBJECT_SIZE = 24; SURROUND_FACTOR=2; % 32px images 
+IMAGENET_FRAME = 8; IMAGENET_OBJECT_SIZE = 48; SURROUND_FACTOR=3; % 64px images
+%IMAGENET_FRAME = 32; IMAGENET_OBJECT_SIZE = 64; SURROUND_FACTOR=3; % 128px images
+%IMAGENET_FRAME = 5; IMAGENET_OBJECT_SIZE = 40; SURROUND_FACTOR=2; % 50px images
+N_HMAX_FEATURES = 4096; %N_HMAX_FEATURES = 1024;
+
+% The below parameters depend on the object and frame size in a consistent
+% manner, don't change this.
+IMAGENET_FRAME_SIZE = IMAGENET_OBJECT_SIZE*SURROUND_FACTOR;
+IMAGENET_IMAGE_SIZE = IMAGENET_OBJECT_SIZE+2*IMAGENET_FRAME;
+IMAGENET_FRAME_LIMITS = [1+(IMAGENET_FRAME_SIZE - IMAGENET_IMAGE_SIZE) / 2, IMAGENET_FRAME_SIZE / 2 + IMAGENET_IMAGE_SIZE / 2];
+fprintf('Objects are %d x %d in the middle of %d x %d image\n', IMAGENET_OBJECT_SIZE, IMAGENET_OBJECT_SIZE, IMAGENET_IMAGE_SIZE, IMAGENET_IMAGE_SIZE);
