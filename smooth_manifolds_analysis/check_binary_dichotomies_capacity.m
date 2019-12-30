@@ -165,7 +165,7 @@ check_binary_dichotomies_capacity(XsAll, N_NEURON_SAMPLES, N_DICHOTOMIES, verbos
         
         % Calculate properties
         [current_radius, current_half_width1, current_argmax_norm1, current_half_width2, current_argmax_norm2, ...
-            current_effective_dimension, current_effective_dimension2, current_alphac_hat] = calc_spheres_properties_fast(Xs);
+            current_effective_dimension, current_effective_dimension2, current_alphac_hat] = calc_manifolds_properties_fast(Xs);
         radius_results(r,:) = current_radius;
         mean_half_width1_results(r,:) = current_half_width1;
         mean_argmax_norm1_results(r,:) = current_argmax_norm1;

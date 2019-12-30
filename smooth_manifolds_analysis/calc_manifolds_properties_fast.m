@@ -1,11 +1,11 @@
 function [radius_results, mean_half_width1_results, mean_argmax_norm1_results, ...
     mean_half_width2_results, mean_argmax_norm2_results, effective_dimension_results, effective_dimension2_results, alphac_hat_results] = ...
-    calc_spheres_properties_fast(tuning_function, N_RANDOM_PROJECTIONS)
+    calc_manifolds_properties_fast(tuning_function, N_RANDOM_PROJECTIONS)
     if nargin < 2
         N_RANDOM_PROJECTIONS = 1000;
     end
     
-    % A fast version of calc_spheres_properties which calculate just radiuses
+    % A fast version of calc_manifolds_properties which calculate just radiuses
     [N_NEURONS, N_SAMPLES, N_OBJECTS] = size(tuning_function);
 
     % Reduce the global mean
