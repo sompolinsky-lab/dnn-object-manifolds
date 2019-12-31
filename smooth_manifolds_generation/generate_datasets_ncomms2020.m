@@ -74,18 +74,22 @@ for i=1:9
     for id=1:n_batches(i)*2; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches(i), id); end
     generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches(i), 1:n_batches(i)*2);
 end
+
 % Generate 2D manifolds for alexnet with P=64 (control, different neurons)
 i=9; n_batches=64;
 for seed=1:4
     for id=1:n_batches*2; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, id, nan, seed); end
     generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, 1:n_batches*2, nan, seed);
 end
+
 % Generate 2D manifolds for alexnet with P=64 (control, different objects)
 i=9; n_batches=64;
 for seed=1:4
     for id=1:n_batches*2; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, id, nan, 0, seed); end
     generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, 1:n_batches*2, nan, 0, seed);
 end
+
+% Generate 2D manifolds for alexnet before training with P=64 (control, different objects)
 i=9; n_batches=64; epoch=0;
 for seed=1:4
     for id=1:n_batches*2; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, id, epoch, 0, seed); end
@@ -95,31 +99,28 @@ end
 % Generate 2D representation for vgg16 
 n_batches = 4;
 for i=1:3
-    for id=1:2*n_batches; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id); end   % @hesed
-    generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:2*n_batches);                  % @keter
+    for id=1:2*n_batches; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id); end
+    generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:2*n_batches);
 end
 for i=4:9
     n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/201);
     for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id, nan, 201); end
     generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:MAX_BATCH, nan, 201);
 end
+
 % Generate 2D representation for vgg16 (control, different neurons) 
 i=9; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/201);
 for seed=1:4
     for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id, nan, 201, seed); end
     generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:MAX_BATCH, nan, 201, seed);
 end
+
 % Generate 2D representation for vgg16 (control, different objects) 
 i=9; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/201);
 for seed=1:4
     for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id, nan, 201, 0, seed); end
     generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:MAX_BATCH, nan, 201, 0, seed);
 end
-
-% Generate 2D representation for googlenet 
-i=8; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/801);
-for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 2, 2, n_batches, id, nan, 801); end
-generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 2, 2, n_batches, 1:MAX_BATCH, nan, 801);
 
 % Generate 2D representation for resnet50
 for i=1:9
@@ -128,26 +129,21 @@ for i=1:9
     generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 3, 2, n_batches, 1:MAX_BATCH, nan, 201);
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Randomly sampled manifolds data-set     
-% Theoretical capacity using low-rank approximation of correlations matrix 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Generate 2D representation for alexnet at different training epochs
-i=8; n_batches = 64; 
+% Generate 2D representation for alexnet before training
+i=9; n_batches = 64; 
 for epoch=[0, 1, 2, 3, 4, 5, 10, 50, 90, inf]
     for id=1:n_batches*2; generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, id, epoch); end
     generate_convnet_random_change(64, RANGE_FACTORS(i), SAMPLES_2D(i), 1, 2, n_batches, 1:n_batches*2, epoch);
 end
 
-% Generate 2D representation for vgg16 at different training epochs
-i=8; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/201);
+% Generate 2D representation for vgg16 before training
+i=9; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/201);
 epoch=0;
 for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, id, epoch, 201); end
 generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 5, 2, n_batches, 1:MAX_BATCH, epoch, 201);
 
-% Generate 2D representation for resnet18 at different training epochs 
-i=8; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/801);
+% Generate 2D representation for resnet18 before training 
+i=9; n_batches = 64; MAX_BATCH = 2*n_batches*ceil(SAMPLES_2D(i)/801);
 for epoch=[0, 1, 2, 3, 4, 5, 10, 50, 90, nan]
     for id=1:MAX_BATCH; generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 4, 2, n_batches, id, epoch, 801); end
     generate_convnet_random_change2(64, RANGE_FACTORS(i), SAMPLES_2D(i), 4, 2, n_batches, 1:MAX_BATCH, epoch, 801);
