@@ -1,7 +1,7 @@
 # Separability and Geometry of Object Manifolds in Deep Neural Networks
 
 
-[![bioRxiv shield](https://img.shields.io/badge/bioRxiv-644658-red.svg?style=flat)](https://arxiv.org/abs/1709.01233)
+[![bioRxiv shield](https://img.shields.io/badge/bioRxiv-644658-red.svg?style=flat)](https://www.biorxiv.org/content/10.1101/644658v2)
 [![DOI](https://img.shields.io/badge/DOI-https://doi.org/10.1101/644658-blue.svg?style=flat)](https://doi.org/10.1101/644658)
 
 
@@ -37,7 +37,7 @@ as well as the code used in the analysis of both point-cloud and smooth manifold
 - [point_cloud_analysis](./point_cloud_analysis): *Matlab* code used in the paper for the analysis of point cloud manifods.
 - [smooth_manifolds_generation](./smooth_manifolds_generation): *Matlab* code used in the paper for the generation of smooth manifods.
 - [smooth_manifolds_analysis](./smooth_manifolds_analysis): *Matlab* code used in the paper for the analysis of smooths manifolds.
-- [FOptM](./FOptM): copy of the \[Wen & Yib\ 2010] (*A Feasible method for Optimization with Orthogonality Constraints*) code from [their web site](http://optman.blogs.rice.edu). See [their README](./FOptM/README.m) for more details.
+- [FOptM](./FOptM): copy of the code of \[Wen & Yib 2010\] (*A Feasible method for Optimization with Orthogonality Constraints*) from [their web site](http://optman.blogs.rice.edu). See [their README](./FOptM/README.m) for more details.
 
 
 # System Requirements
@@ -45,7 +45,7 @@ as well as the code used in the analysis of both point-cloud and smooth manifold
 The code requires:
  * *Matlab* from MathWorks, version R2017a or later (tested on R2017a);
  * Any OS supported by the Matlab platform (tested on Windows 10, MAC OS and Gentoo Linux);
- * *CPLEX* from IBM, version 128 or later (tested on 128)
+ * *CPLEX* from IBM, version 128 or later (tested on CPLEX studio 128)
  * *MatConvNet* code and publically available models from [the official website](http://www.vlfeat.org/matconvnet).
 
 No special hardware is required, but MatConvNet may take advantage of a GPU (as indicated in its installation instuctions), which may speed-up manifold generation by a factor.
