@@ -38,8 +38,8 @@ function net = convnet_init(network_type, epoch)
         % Load network file
         net = dagnn.DagNN.loadobj(load(modelPath));
     elseif network_type == 3
-        %modelPath = [modelsDir, 'imagenet-resnet-50-dag.mat'];
-        modelPath = [modelsDir, 'resnet50-pt-mcn.mat'];
+        modelPath = [modelsDir, 'imagenet-resnet-50-dag.mat'];
+        %modelPath = [modelsDir, 'resnet50-pt-mcn.mat'];
         % Load network file
         net = dagnn.DagNN.loadobj(load(modelPath));
     elseif network_type == 4

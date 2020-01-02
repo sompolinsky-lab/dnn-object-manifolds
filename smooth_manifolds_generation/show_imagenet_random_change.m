@@ -17,7 +17,7 @@ image_indices = choose_imagenet_template_images(N_OBJECTS);
 assert(length(image_indices) == N_OBJECTS);
 assert(min(image_indices) >= 1 && max(image_indices) <= N_TRAIN_OBJECTS);
 img_base = zeros(N_OBJECTS+1, IMAGENET_FRAME_SIZE, IMAGENET_FRAME_SIZE, 3, 'uint8');
-img_base(1,:,:,:) = imread('../../docs/results/dog_small.jpg');
+img_base(1,:,:,:) = imread('./dog_small.jpg');
 for i=1:N_OBJECTS
     img_base(i+1,:,:,:) = read_imagenet_thumbnails(image_indices(i));
 end

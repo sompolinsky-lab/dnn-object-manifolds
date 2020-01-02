@@ -15,8 +15,7 @@ end
 if nargin < 10
     objects_seed = 0;
 end
-delete_after_save = false;
-validate_after_save = false;
+delete_after_save = true;
 
 N_COORDINATES = 6;
 suffix = '';
@@ -47,6 +46,9 @@ layer_sizes = network_metadata.layer_sizes;
 layer_indices = network_metadata.layer_indices;
 N_LAYERS = network_metadata.N_LAYERS;
 
+if ~exist(network_name, 'dir')
+    mkdir(network_name);
+end
 prefix = sprintf('%s/generate_%s_random_change_dof%d', network_name, network_name, degrees_of_freedom);
 global IMAGENET_IMAGE_SIZE;
 if IMAGENET_IMAGE_SIZE ~= 64
@@ -95,42 +97,6 @@ N_DIRECTIONS = length(direction_names);
 % Merge files
 if length(run_id) > 1
     run_ids = run_id;
-    if validate_after_save
-        for l=1:N_LAYERS+1
-            for run_id = run_ids
-                if range_factor < 0.1
-                    run_name = sprintf('%s_range%f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
-                else
-                    run_name = sprintf('%s_range%1.1f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
-                end
-                assert(exist(run_name, 'file')>0, 'File not exists: %s', run_name);
-                a = matfile(run_name);
-                tf = a.tuning_function;
-                if (min(tf(:)) < -1e5)
-                    fprintf('Deleting results (min issue) from %s\n', run_name);
-                    delete(run_name);
-                elseif (max(tf(:)) > 1e5)
-                    fprintf('Deleting results (max issue) from %s\n', run_name);
-                    delete(run_name);
-                end
-            end
-        end
-        return;
-    end
-    if delete_after_save
-        for l=1:N_LAYERS+1
-            for run_id = run_ids
-                if range_factor < 0.1
-                    run_name = sprintf('%s_range%f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
-                else
-                    run_name = sprintf('%s_range%1.1f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
-                end
-                fprintf('Deleting results loaded from %s\n', run_name);
-                delete(run_name);
-            end
-        end
-        return;
-    end
 
     T0=tic;
     for l=1:N_LAYERS+1
@@ -167,6 +133,18 @@ if length(run_id) > 1
             sample_coordinates(param_id,((batch_number-1)*batch_size+1):(batch_number*batch_size),:,:) = in_file.sample_coordinates;
         end
         save(out_name, 'tuning_function', 'image_indices', 'sample_coordinates', 'direction_names', '-v7.3');
+
+        if delete_after_save
+            for run_id = run_ids
+                if range_factor < 0.1
+                    run_name = sprintf('%s_range%f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
+                else
+                    run_name = sprintf('%s_range%1.1f_P%d_M%d_%s%s_%d.mat', prefix, range_factor, N_OBJECTS, N_SAMPLES, layer_names{l}, suffix, run_id);
+                end
+                fprintf('Deleting results loaded from %s\n', run_name);
+                delete(run_name);
+            end
+        end
         t = toc(T0)*(single(N_LAYERS+1)/l-1);
         if t>1800
             fprintf('Layer %d (took %1.1f seconds) ETA: %1.1f hours\n', l, toc, t / 3600);
