@@ -1,0 +1,4 @@
+figures/
+MatConvNet/
+*/*/*.mat
+*/convnet_*_model.mat
