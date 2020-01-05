@@ -16,7 +16,7 @@
 - [How to use with your data](#how-to-use-with-your-data)
 - [Citation](#citation)
 - [License](./LICENSE)
-- [Issues](./issues)
+- [Issues](https://github.com/sompolinsky-lab/dnn-object-manifolds/issues)
 
 # Abstract
 
@@ -63,6 +63,7 @@ No special hardware is required, but MatConvNet may take advantage of a GPU (as 
 git clone https://github.com/sompolinsky-lab/dnn-object-manifolds.git
 ```
  * Below we denote the folder where this project is now located as `<ROOT>`.
+ * Download `imagenet_all_thumbnails_64px.mat` [from figshare](https://doi.org/10.6084/m9.figshare.11494314) and save it at `<ROOT>/smooth_manifolds_generation`.
  * Typical installation time: 5 minutes
  
 ## Install CPLEX

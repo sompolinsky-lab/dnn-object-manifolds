@@ -2,3 +2,4 @@ figures/
 MatConvNet/
 */*/*.mat
 */convnet_*_model.mat
+smooth_manifolds_generation/imagenet_all_thumbnails_64px.mat
