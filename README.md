@@ -2,7 +2,7 @@
 
 
 [![bioRxiv shield](https://img.shields.io/badge/bioRxiv-644658-red.svg?style=flat)](https://www.biorxiv.org/content/10.1101/644658v2)
-[![DOI](https://img.shields.io/badge/DOI-https://doi.org/10.1101/644658-blue.svg?style=flat)](https://doi.org/10.1101/644658)
+[![DOI](https://img.shields.io/badge/DOI-https://doi.org/10.1038/s41467-020-14578-5-blue.svg?style=flat)](https://doi.org/10.1038/s41467-020-14578-5)
 
 
 ## Contents
