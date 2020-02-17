@@ -1,7 +1,8 @@
 # Separability and Geometry of Object Manifolds in Deep Neural Networks
 
 
-[![bioRxiv shield](https://img.shields.io/badge/bioRxiv-644658-red.svg?style=flat)](https://www.biorxiv.org/content/10.1101/644658v2)
+[![bioRxiv shield](https://img.shields.io/badge/bioRxiv-644658-red.svg?style=flat)](https://www.biorxiv.org/content/10.1101/644658v3)
+[![bioRxiv shield](https://img.shields.io/badge/bioRxiv-Supplemenrary-green.svg?style=flat)](https://www.biorxiv.org/content/biorxiv/early/2020/02/17/644658/DC1/embed/media-1.pdf?download=true)
 [![DOI](https://img.shields.io/badge/DOI-10.1038/s41467--020--14578--5-blue.svg?style=flat)](https://doi.org/10.1038/s41467-020-14578-5)
 
 
@@ -249,14 +250,16 @@ Dm = mean(file.effective_dimension_results),2) % manifolds dimensions
 
 # Citation
 
-Please cite our pre-print at bioRxiv:
+Please cite our *Nature Communications* paper:
 ```
-@article{cohen2019separability,
-  title={Separability and Geometry of Object Manifolds in Deep Neural Networks},
+@article{cohen2020separability,
+  title={Separability and geometry of object manifolds in deep neural networks},
   author={Cohen, Uri and Chung, SueYeon and Lee, Daniel D and Sompolinsky, Haim},
-  journal={bioRxiv},
-  pages={644658},
-  year={2019},
-  publisher={Cold Spring Harbor Laboratory}
+  journal={Nature Communications},
+  volume={11},
+  number={1},
+  pages={1--13},
+  year={2020},
+  publisher={Nature Publishing Group}
 }
 ```
