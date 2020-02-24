@@ -27,13 +27,13 @@ Stimuli are represented in the brain by the collective population responses of s
 
 This repository provides *Matlab implementation* of the algorithms described in the paper, allowing for 
  * direct estimation of classification capacity;
- * numerical estimation of object manifolds geometry (i.e. manifolds radius, dimension and inter-manifold correlations) and the classification capacity predicated by our mean-field theory.
+ * numerical estimation of object manifolds geometry (i.e. manifolds radius, dimension and inter-manifold correlations) and the classification capacity predicated by the mean-field theory based analysis used in our work.
 
 Furthermore, we provide the code used to generate smooth manifolds described in the paper, 
 as well as the code used in the analysis of both point-cloud and smooth manifolds.
 
-For numerical estimation of object manifolds geometry and the classification capacity based on our mean-field theory
-[a Python implementation is available in another repositoy](https://github.com/schung039/neural_manifolds_replicaMFT).
+For numerical estimation of object manifolds geometry and the classification capacity based on the metric used in our analysis, a follow-up work on speech recognition deep networks provides 
+[a python implementation](https://github.com/schung039/neural_manifolds_replicaMFT).
 
 # Repo Contents
 
