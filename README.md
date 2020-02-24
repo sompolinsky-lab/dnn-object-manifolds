@@ -21,7 +21,7 @@
 
 # Abstract
 
-Stimuli are represented in the brain by the collective population responses of sensory neurons, and an object presented under varying conditions gives rise to a collection of neural population responses called an *object manifold*. Changes in the object representation along a hierarchical sensory system are associated with changes in the geometry of those manifolds, and [recent theoretical progress](https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.031003) connects this geometry with *classification capacity*, a quantitative measure of the ability to support object classification. Deep neural networks trained on object classification tasks are a natural testbed for the applicability of this relation. We show how classification capacity improves along the hierarchies of deep neural networks with different architectures. We demonstrate that changes in the geometry of the associated object manifolds underlie this improved capacity, and shed light on the functional roles different levels in the hierarchy play to achieve it, through orchestrated reduction of manifolds’ radius, dimensionality and inter-manifold correlations.
+Stimuli are represented in the brain by the collective population responses of sensory neurons, and an object presented under varying conditions gives rise to a collection of neural population responses called an *object manifold*. Changes in the object representation along a hierarchical sensory system are associated with changes in the geometry of those manifolds, and [recent theoretical progress connects this geometry with *classification capacity*](https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.031003), a quantitative measure of the ability to support object classification. Deep neural networks trained on object classification tasks are a natural testbed for the applicability of this relation. We show how classification capacity improves along the hierarchies of deep neural networks with different architectures. We demonstrate that changes in the geometry of the associated object manifolds underlie this improved capacity, and shed light on the functional roles different levels in the hierarchy play to achieve it, through orchestrated reduction of manifolds’ radius, dimensionality and inter-manifold correlations.
 
 # Overview
 
@@ -32,7 +32,7 @@ This repository provides *Matlab implementation* of the algorithms described in 
 Furthermore, we provide the code used to generate smooth manifolds described in the paper, 
 as well as the code used in the analysis of both point-cloud and smooth manifolds.
 
-For numerical estimation of object manifolds geometry and the classification capacity based on the metric used in our analysis, a follow-up work on speech recognition deep networks provides 
+For numerical estimation of object manifolds geometry and the classification capacity based on the metric used in our analysis, [a follow-up work on speech recognition deep networks](https://papers.nips.cc/paper/9583-untangling-in-invariant-speech-recognition) provides 
 [a python implementation](https://github.com/schung039/neural_manifolds_replicaMFT).
 
 # Repo Contents
