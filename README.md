@@ -254,7 +254,7 @@ Please cite our *Nature Communications* paper:
 ```
 @article{cohen2020separability,
   title={Separability and geometry of object manifolds in deep neural networks},
-  author={Cohen, Uri and Chung, SueYeon and Lee, Daniel D and Sompolinsky, Haim},
+  author={Cohen*, Uri and Chung*, SueYeon and Lee, Daniel D and Sompolinsky, Haim},
   journal={Nature Communications},
   volume={11},
   number={1},
