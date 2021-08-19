@@ -202,7 +202,7 @@ check_convnet_covariance_low_rank_approx_optimal_K(N_OBJECTS, range_factor, N_SA
 
 ## Point-cloud manifolds
 
-The MATLAB code used in our paper is provided [here] (https://github.com/sompolinsky-lab/dnn-object-manifolds/blob/master/point_cloud_analysis/manifold_stable_analysis_corr.m). 
+The MATLAB code used in our paper is provided [here](https://github.com/sompolinsky-lab/dnn-object-manifolds/blob/master/point_cloud_analysis/manifold_stable_analysis_corr.m). 
 
 If you are interested in the Python version of this implementation, check out [the Python repository for a follow-up paper in Speech](https://github.com/schung039/neural_manifolds_replicaMFT).
 
